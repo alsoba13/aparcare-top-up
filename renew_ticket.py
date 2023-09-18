@@ -46,7 +46,11 @@ class AparcarePlaywrightApp:
             double_confirmation_button.click()
 
     def confirm_renovated(self):
-        expect(self.page.get_by_text("Comprobante de estacionamiento")).to_be_visible()
+        try:
+            expect(self.page.get_by_text("Comprobante de estacionamiento")).to_be_visible()
+        except:
+            print(self.page.inner_text("body"))
+            return
         start_time = self.page.locator(".row", has=self.page.get_by_text("Inicio ticket:")).inner_text()
         end_time = self.page.locator(".row", has=self.page.get_by_text("Final ticket:")).inner_text()
         email = self.page.locator(".row", has=self.page.get_by_text("E-mail:")).inner_text()
