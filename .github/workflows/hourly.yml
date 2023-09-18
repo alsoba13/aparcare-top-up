@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: date
       - run: pip3 install pytest-playwright
       - run: python3 -m playwright install chromium
       - run: python3 renew_ticket.py ${{ secrets.CITY }} ${{ secrets.EMAIL }} ${{ secrets.PASSWORD }} ${{ secrets.CAR }}
