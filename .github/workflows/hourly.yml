@@ -11,4 +11,4 @@ jobs:
       - uses: actions/checkout@v2
       - run: pip3 install pytest-playwright
       - run: python3 -m playwright install chromium
-      - run: python3 renew_ticket.py IGUALADA anymail@gmail.com any-password any-plate
+      - run: python3 renew_ticket.py ${{ secrets.CITY }} ${{ secrets.email }} ${{ secrets.PASSWORD }} ${{ secrets.CAR }}
