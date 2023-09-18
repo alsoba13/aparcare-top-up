@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: timedatectl set-timezone Europe/Madrid --no-ask-password
+      - run: sudo timedatectl set-timezone Europe/Madrid
       - run: date
       - run: pip3 install pytest-playwright
       - run: python3 -m playwright install chromium
