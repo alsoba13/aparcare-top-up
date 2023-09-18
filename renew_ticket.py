@@ -2,8 +2,6 @@ import sys
 from playwright.sync_api import sync_playwright, Page, expect
 
 class AparcarePlaywrightApp:
-    page: Page
-    
     def __enter__(self):
         self.playwright = sync_playwright().start()
         chromium = self.playwright.chromium
