@@ -1,0 +1,12 @@
+name: "aparcare-top-up cron job"
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  renew_ticket:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          python3 renew_ticket.py IGUALADA anymail@gmail.com any-password any-plate
