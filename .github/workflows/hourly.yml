@@ -10,7 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: sudo timedatectl set-timezone Europe/Madrid
-      - run: date
       - run: pip3 install pytest-playwright
       - run: python3 -m playwright install chromium
-      - run: python3 renew_ticket.py ${{ secrets.CITY }} ${{ secrets.EMAIL }} ${{ secrets.PASSWORD }} ${{ secrets.CAR }}
+      - run: python3 renew_ticket.py ${{ secrets.CITY }} ${{ secrets.EMAIL }} ${{ secrets.PASSWORD }} ${{ secrets.CAR }} >> $GITHUB_STEP_SUMMARY

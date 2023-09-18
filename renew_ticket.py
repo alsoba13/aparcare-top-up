@@ -49,10 +49,8 @@ class AparcarePlaywrightApp:
         expect(self.page.get_by_text("Comprobante de estacionamiento")).to_be_visible()
         start_time = self.page.locator(".row", has=self.page.get_by_text("Inicio ticket:")).inner_text()
         end_time = self.page.locator(".row", has=self.page.get_by_text("Final ticket:")).inner_text()
-        email = self.page.locator(".row", has=self.page.get_by_text("E-mail:")).inner_text()
         print(start_time)
         print(end_time)
-        print(email)
 
     def run(self, city, email, password, car):
         self.accept_cookies()
