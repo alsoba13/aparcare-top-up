@@ -8,6 +8,7 @@ jobs:
   renew_ticket:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: |
           ls
           python3 renew_ticket.py IGUALADA anymail@gmail.com any-password any-plate
