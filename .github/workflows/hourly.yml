@@ -8,7 +8,7 @@ jobs:
   renew_ticket:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: sudo timedatectl set-timezone Europe/Madrid
       - run: pip3 install pytest-playwright
       - run: python3 -m playwright install chromium
